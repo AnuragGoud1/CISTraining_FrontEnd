@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h3>Sending amount value:<h3>
+
+        <p id="output"></p>
+        
+        <script>
+            var sendingAmount =1000;
+        
+            var environment = prompt("What's your environment");
+
+            switch(environment){
+                case 'dev':
+                    sendingAmount= sendingAmount+ 0.1* sendingAmount;
+                    break;
+                case 'test':
+                sendingAmount= sendingAmount+ 0.2* sendingAmount;
+                break;
+                case 'stage':
+                    sendingAmount= sendingAmount+ 0.3* sendingAmount;
+                    break;
+                case 'prod':
+                sendingAmount= sendingAmount+ 0.05* sendingAmount;
+                break;
+            
+            }
+            console.log(sendingAmount);
+            document.getElementById("output").textContent=sendingAmount;
+        </script>
+    </body>
+</html>
