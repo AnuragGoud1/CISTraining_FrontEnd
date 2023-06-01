@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>CIS Training</title>
+        <style>
+           img {
+            height:250px;
+            width: 250px;
+            border-radius: 50%;
+           }
+        </style>
+            <script>
+                var profile = {
+                    firstname: "Anurag",
+                    lastname: "Goud",
+                    age : 25,
+                    address: "Denton Tx",
+                    citizen: "Indian",
+                    education:" University of North Texas",
+                    hobbies:[{sports:["cricket","football"]},{entertainment:["music","dance"]},{achievements:
+                        ["Won District 1St in Olympiads","Got 1st in district level dance competition"]}]
+                
+                }
+            </script>
+    </head>
+    <body>
+         <img src="IMG-0023 (1).jpg";>
+         <p id="para"></p>   
+         <script>
+            var  output = profile.hobbies[2].achievements[1];
+            document.getElementById("para").textContent = output;
+            </script>
+        </body>
+       
+
+        
+       
+    
+</html>
