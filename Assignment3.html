@@ -1,16 +1,67 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            body {
+                background-color:#e8d768 ;
+                color:aliceblue;
+            }
+           div {
+                height: 400px;
+                width:800px;
+                padding:50px 50px;
+                margin: 100px auto;
+                background-color: darkolivegreen;
+            }
+            h3{
+                font-size: 25px;
+            }
+            u {
+                padding: 2px 2px;
+            }
+            
+            h2 , h3 {
+                font-size: 20px;
+                /* font-family:cursive; */
+                text-align: center;
+            }
+            input{
+                border-radius: 5px;
+                border: none;
+            }
+            button {
+                background-color: gainsboro;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                padding:10px 10px;
+                border: none;
+                display: inline-block;
+                text-align:center;
+                border-radius: 4px;;
+
+            }
+            
+           #output {
+             font-size:35px;
+             text-align:center;
+            }
+        </style>
+    </head>
     <body>
-        <h3>Sending amount value:<h3>
-
+    <div id="container">
+        <h3><u>Amount Calculation </u></h3>
+        <h2>Enter Sending Amount:<input type = "number" id ="amount"></h2>
+        <h2>Enter Environment:<input type = "text" id ="environment"></h2>
+        <!-- <p id="output"></p> -->
+        <h3><button type="button" onclick="printSentAmount()">Print Amount</button></h3>
         <p id="output"></p>
-        
+    </div>
         <script>
-            var sendingAmount =1000;
-        
-            var environment = prompt("What's your environment");
 
-            switch(environment){
+        
+            function printSentAmount(){
+                var sendingAmount = parseInt(document.getElementById("amount").value);
+                var ENV = document.getElementById("environment").value;
+            switch(ENV){
                 case 'dev':
                     sendingAmount= sendingAmount+ 0.1* sendingAmount;
                     break;
@@ -23,10 +74,16 @@
                 case 'prod':
                 sendingAmount= sendingAmount+ 0.05* sendingAmount;
                 break;
+                default:
+                sendingAmount = parseInt(document.getElementById("amount").value);
+                break;
             
             }
-            console.log(sendingAmount);
-            document.getElementById("output").textContent=sendingAmount;
+            console.log('Environment asked:'+ENV)
+            console.log('Amount sent: '+sendingAmount);
+            document.getElementById("output").textContent= '**** Great !! You have sent '+sendingAmount+'$ ****';
+        }
         </script>
+         
     </body>
 </html>
