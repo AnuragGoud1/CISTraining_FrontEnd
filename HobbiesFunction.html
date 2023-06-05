@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hobbies</title>
+    </head>
+    <body>
+        <h1>Hobbies Assignment</h1>
+        <h2>List of Hobbies</h2>
+        <ol id ="output"></ol>
+        <script>
+            const hobbies =["Dancing","Watching movies","Reading","Playing Soccer","Travelling"];
+            function printhobbies(){
+                
+                for(let i=0;i<hobbies.length;i++){
+                    
+                    console.log(hobbies[i]);
+                    document.getElementById("output").innerHTML+= "<li>" + hobbies[i] + "</li>";
+                }
+            }
+
+           
+
+            function addItemsToList(){
+                hobbies.push(x);
+                console.log("Item is Added....");
+            }
+
+            var x = prompt("Enter value to be added");
+            var y = prompt("Enter value to be removed");
+
+           function deleteItemsFromList(){
+                   for(i=0;i< hobbies.length;i++){
+                    if(hobbies[i]==y){
+                        hobbies.splice(i,1);   
+                    }
+                    console.log("Item is removed from List.......");
+                   }
+                }
+            
+                addItemsToList(x);
+                deleteItemsFromList(y);
+                printhobbies();
+        </script>
+
+    </body>
+</html>
