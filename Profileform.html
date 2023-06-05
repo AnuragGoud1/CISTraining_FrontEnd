@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile Form</title>
+        <script>
+            function showDetails() {
+                var detailsArray = [];
+                detailsArray.push(document.getElementById("firstname").value);
+                detailsArray.push(document.getElementById("lastname").value);
+                detailsArray.push(document.getElementById("dob").value);
+                detailsArray.push(document.getElementById("email").value);
+                detailsArray.push(document.getElementById("phone").value);
+
+                const displayString = JSON.stringify(detailsArray);
+
+                document.getElementById("list").innerHTML = "<h2>Details of Object Created:</h2>"+displayString;
+
+
+                console.log("******** Details Listed Below ********");
+            
+                console.log(
+                    document.getElementById("firstname").value + "  " +
+                    document.getElementById("lastname").value + "  " +
+                    document.getElementById("dob").value + "  " +
+                    document.getElementById("email").value + "  " +
+                    document.getElementById("phone").value + "  "
+                );
+               
+                console.log("******** Input Successful ********");
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Enter Profile Information</h1>
+            <p>First Name:<input type="text" id="firstname" autocomplete="off"></p>
+            <p>Last Name:<input type="text" id="lastname"></p>
+            <p>DOB:<input type="date" id="dob"></p>
+            <p>Email: <input type="email" id="email" autocomplete="off"></p>
+            <p>Phone: <input type="number" id="phone" autocomplete="off"></p>
+            <p><button type="submit" onclick="showDetails()">Submit</button></p>
+        </div>
+        <hr>
+        <div id="outputDetails">
+            <p id="list"></p>
+        </div>
+    </body>
+</html>

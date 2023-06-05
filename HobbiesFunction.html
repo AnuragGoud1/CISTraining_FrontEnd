@@ -9,16 +9,13 @@
         <ol id ="output"></ol>
         <script>
             const hobbies =["Dancing","Watching movies","Reading","Playing Soccer","Travelling"];
-            function printhobbies(){
-                
+            function printhobbies(){  
                 for(let i=0;i<hobbies.length;i++){
                     
                     console.log(hobbies[i]);
                     document.getElementById("output").innerHTML+= "<li>" + hobbies[i] + "</li>";
                 }
             }
-
-           
 
             function addItemsToList(){
                 hobbies.push(x);
