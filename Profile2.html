@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Form</title>
+    <script>
+        function showDetails() {
+            // Move the declaration of 'detailsArray' outside the function
+            var detailsArray = [];
+
+            // Use 'checked' property instead of 'value' for radio buttons
+            if (document.getElementById("male").checked)
+                detailsArray.push("Male");
+            else if (document.getElementById("female").checked)
+                detailsArray.push("Female");
+
+            detailsArray.push(document.getElementById("firstname").value);
+            detailsArray.push(document.getElementById("lastname").value);
+
+            // Get the checked hobbies and store them in an array
+            var hobbyValues = document.getElementsByName("hobbies");
+            var hobbiesArray = [];
+
+            for (var i = 0; i < hobbyValues.length; i++) {
+                if (hobbyValues[i].checked) {
+                    hobbiesArray.push(hobbyValues[i].value);
+                }
+            }
+
+            detailsArray.push(hobbiesArray);
+
+            // Convert 'detailsArray' to a JSON string
+            var displayString = JSON.stringify(detailsArray);
+
+            // Update the 'list' element with the details
+            document.getElementById("list").innerHTML = "<h2>Details of Object Created:</h2>" +
+                "<ol>" +
+                "<li>FirstName: " + document.getElementById("firstname").value + "</li>" +
+                "<li>Lastname: " + document.getElementById("lastname").value + "</li>" +
+                "<li>Gender: " + detailsArray[0] + "</li>" +
+                "<li>Hobbies: " + detailsArray[3].join(", ") + "</li>" +
+                "</ol>" +
+                displayString;
+
+            console.log("******** Details Listed Below ********");
+            console.log(
+                document.getElementById("firstname").value + "  " +
+                document.getElementById("lastname").value + "  " +
+                detailsArray[0] + "  " +
+                detailsArray[3].join(", ")
+            );
+            console.log("******** Input Successful ********");
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Enter Profile Information</h1>
+        <form>
+            <p>First Name:<input type="text" id="firstname" autocomplete="off"></p>
+            <p>Last Name:<input type="text" id="lastname"></p>
+
+            <p>Gender: </p>
+            <!-- Add distinct 'id' attributes for the radio buttons -->
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label><br>
+
+            <p>Hobbies:</p>
+            <!-- Add 'value' attributes to the checkboxes -->
+            <input type="checkbox" id="learning" name="hobbies" value="Learning">
+            <label for="learning">Learning</label><br>
+            <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
+            <label for="dancing">Dancing</label><br>
+            <input type="checkbox" id="playing" name="hobbies" value="Playing">
+            <label for="playing">Playing</label><br>
+
+            <p><button type="button" onclick="showDetails()">Submit</button></p>
+        </form>
+    </div>
+    <hr>
+    <div id="outputDetails">
+        <p id="list"></p>
+    </div>
+</body>
+</html>

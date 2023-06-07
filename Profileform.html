@@ -13,7 +13,15 @@
 
                 const displayString = JSON.stringify(detailsArray);
 
-                document.getElementById("list").innerHTML = "<h2>Details of Object Created:</h2>"+displayString;
+                document.getElementById("list").innerHTML = "<h2>Details of Object Created:</h2>" +
+                 "<ol>" +
+                 "<li>FirstName: " + document.getElementById("firstname").value + "</li>" +
+                 "<li>Lastname: " + document.getElementById("lastname").value + "</li>" +
+                 "<li>DOB: " + document.getElementById("dob").value + "</li>" +
+                 "<li>Email: " + document.getElementById("email").value + "</li>" +
+                 "<li>Phone: " + document.getElementById("phone").value + "</li>" +
+                 "</ol>" + 
+                 displayString;
 
 
                 console.log("******** Details Listed Below ********");
