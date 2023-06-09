@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+    <h1>Prototypes</h1>
+    <script>
+        Array.prototype.secondSmallestElement = function() {
+            this.sort((a, b) => a - b);
+            console.log(this[1]);
+        };
+
+        let array = [20, 12, 9, 8, 13, 10];
+        array.secondSmallestElement();
+    </script>
+</body>
+</html>
