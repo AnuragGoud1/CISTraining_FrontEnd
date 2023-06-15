@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Navigation Bar Examle</title>
+  </head>
+  <body>
+    <nav>
+      <ul id ="navbar-items">
+        <li><a href ="">Profile</a></li>
+        <li><a href ="">Contact</a></li>
+        <li><button  id ="togglebutton" (click)="toggleLogin()">
+          {{isLoggedIn ? 'Logout': 'Login' }}</button></li>
+        <li id="search">
+          <input type="search" placeholder="search" id="searchbox">
+          <button type="submit" id ="searchButton" onclick= displayPage()>search</button></li>
+      </ul>
+    </nav>
+    <nav id="nav-vertical">
+      <ul id ="navbar-items-vertical">
+        <li id ="vertical"><a href ="">Profile</a></li>
+        <li id ="vertical"><a href ="">Contact</a></li>
+        <li id ="verticalSearchBox"><button  id ="togglebutton" (click)="toggleLogin()">
+          {{isLoggedIn ? 'Logout': 'Login' }}</button></li>
+        <li id="vertical">
+          <input type="search" placeholder="search" id="searchbox"></li>
+          <li id ="verticalSearchButton"><button type="submit" id ="searchButtonVertical" onclick= displayPage()>search</button></li>
+      </ul>
+    </nav>
+    
+  </body>
+</html>
